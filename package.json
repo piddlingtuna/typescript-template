@@ -1,0 +1,58 @@
+{
+  "name": "typescript-template",
+  "version": "1.0.0",
+  "private": false,
+  "type": "module",
+  "description": "A simple Typescript template for a Node project.",
+  "keywords": [],
+  "homepage": "https://github.com/piddlingtuna/urban-bot#readme",
+  "bugs": "https://github.com/piddlingtuna/urban-bot/issues",
+  "repository": "git@github.com:piddlingtuna/typescript-template.git",
+  "license": "MIT",
+  "author": "Michael Gribben <michaelgribbeninfo@gmail.com>",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "build": "stuff",
+    "lint": "stuff",
+    "prettier": "prettier 'src/**/*.ts'",
+    "prettier:fix": "prettier --write 'src/**/*.ts'",
+    "eslint": "eslint 'src/**/*.ts'",
+    "eslint:fix": "eslint --fix 'src/**/*.ts'",
+    "type-check": "stuff",
+    "test": "ts-node"
+  },
+  "dependencies": {
+    "node-fetch": "^3.0.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.31.0",
+    "@typescript-eslint/parser": "^4.31.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-airbnb-typescript": "^14.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2",
+    "prettier": "^2.4.0",
+    "ts-mocha": "^8.0.0",
+    "typescript": "^4.4.3"
+  },
+  "engines": {
+    "node": ">=16.6.0",
+    "npm": ">=7.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.ts": [
+      "eslint --fix",
+      "git add"
+    ]
+  }
+}
